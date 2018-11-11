@@ -135,34 +135,46 @@
     .carousel-dots__item:hover {
       background-color: #a9afb3; }
 
-.shop-section img {
-  width: 100%;
-  height: 100%; }
-
-.shop-section .flex-section {
+.hover-effect, .shop-section .tile .tile-row:after, .shop-section .col-hover:after {
   display: flex;
-  max-width: 500px; }
-
-.shop-section .main-picture,
-.shop-section .item {
-  flex-grow: 1;
-  display: flex;
+  align-items: center;
   justify-content: center;
-  align-items: center; }
+  content: url("../images/shop-now.png");
+  position: absolute;
+  top: -60%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(100, 194, 158, 0);
+  z-index: 999;
+  transition: all 0.2s ease-out;
+  cursor: pointer; }
 
-.shop-section .main-picture {
-  min-height: 300px;
-  overflow: hidden; }
-
-.shop-section .side-items {
-  flex-basis: 150px;
-  flex-shrink: 0; }
-
-.shop-section .item {
-  flex-basis: 50%;
-  min-height: 150px;
-  overflow: hidden;
-  display: flex; }
+.shop-section {
+  display: flex;
+  flex-direction: row; }
+  .shop-section .tile {
+    overflow: hidden; }
+    .shop-section .tile img {
+      height: 100%; }
+    .shop-section .tile .tile-row {
+      display: flex;
+      flex-direction: row;
+      overflow: hidden;
+      position: relative;
+      z-index: 0;
+      height: 50%; }
+      .shop-section .tile .tile-row:hover:after {
+        top: 0;
+        background-color: rgba(100, 194, 158, 0.7); }
+  .shop-section .col-hover {
+    position: relative;
+    z-index: 0; }
+    .shop-section .col-hover:hover:after {
+      top: 0;
+      background-color: rgba(100, 194, 158, 0.7); }
 
 .discover-section {
   background-color: #000;
@@ -231,7 +243,9 @@
 .footer {
   display: flex;
   flex-direction: row;
-  justify-content: space-between; }
+  justify-content: space-between;
+  background-color: #f7f7f7;
+  padding: 100px; }
   .footer .item {
     display: flex;
     width: 240px;
@@ -244,9 +258,11 @@
     .footer .item__title {
       color: #4d4959;
       font-size: 16px;
-      font-style: normal; }
+      font-style: normal;
+      line-height: 1.3; }
     .footer .item__description {
-      font-size: 14px; }
+      font-size: 14px;
+      line-height: 1.3; }
     .footer .item:last-child {
       justify-content: flex-end; }
     .footer .item img {
